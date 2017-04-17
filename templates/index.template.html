@@ -1,0 +1,57 @@
+<page-header chosen-idx="0"></page-header>
+<div class="wrapper">
+    <div class="slider">
+        <ul class="banner">
+            <li ng-repeat="item in images" on-finish-render><img class="img-responsive" ng-src="{{item}}"></li>
+        </ul>
+    </div>
+</div>
+<!-- 第一部分 -->
+<section class="container content">
+    <div class="title">
+        <img class="pull-left" src="img/icon.jpg">
+        <h3>玺墅●新闻资讯</h3>
+    </div>
+    <div class="main_content clearfix">
+        
+    </div>
+</section>
+<img class="img-responsive" src="img/slider/city--2-min-min.jpg" alt="">
+<!-- 第二部分 -->
+<section class="container content">
+    <div class="title">
+        <img class="pull-left" src="img/icon.jpg">
+        <h3>玺墅●设计师</h3>
+    </div>
+    <div class="main_content clearfix">
+        <a href="javascript:void(0)" class="col-xs-12 text-right" ng-click="goDesigner()">&gt;&gt;更多</a>
+        <div class="row">
+            <div class="col-xs-6 col-md-3 designer" ng-repeat="item in designerList" ng-click="goDesigner(item.desId)">
+                <img class="img-responsive" ng-src="{{item.headImg}}" alt="">
+                <div class="desc">
+                    {{item.desName}}
+                    <p>{{item.position}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<img class="img-responsive" src="img/slider/city--2-min-min.jpg" alt="">
+<!-- 第三部分 -->
+<section class="container content">
+    <div class="title">
+        <img class="pull-left" src="img/icon.jpg">
+        <h3>玺墅●案例</h3>
+    </div>
+    <div class="main_content clearfix">
+        <a href="javascript:void(0)" class="col-xs-12 text-right" ng-click="goCases()">&gt;&gt;更多</a>
+        <div class="row">
+            <div class="col-xs-6 col-md-3 caseDetail" ng-repeat="item in caseList">
+                <dl>
+                    <dt><img class="img-responsive" ng-src="{{item.caseImg}}"></dt>
+                    <dd>{{item.caseName}}</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</section>

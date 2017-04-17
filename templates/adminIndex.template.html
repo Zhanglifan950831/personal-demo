@@ -1,0 +1,101 @@
+<img src="img/header.jpg" class="img-responsive">
+<div class="container admin_header">
+    <div class="col-lg-3">
+       <img src="img/logo.jpg"> 
+    </div>
+    <div class="col-lg-8 text-right">
+        <b>您好,亲爱的管理员：</b><span>{{userName}}</span>
+        <a href="javascript:void(0)" ng-click="logOut()">[登出]</a>
+    </div>
+</div>
+<div class="contianer-fluid">
+  <ul class="admin-menu list-unstyled col-lg-2">
+      <li ng-class="{true:'chosen',false:''}[type=='designer']" ng-click="type='designer'"><span>设计师管理</span></li>
+      <li ng-class="{true:'chosen',false:''}[type=='update']" ng-click="type='update'"><span>设计师资料更改</span></li>
+      <li ng-class="{true:'chosen',false:''}[type=='award']" ng-click="type='award'"><span>设计师获奖情况</span></li>
+      <li ng-class="{true:'chosen',false:''}[type=='case']" ng-click="type='case'"><span>案例管理</span></li>
+      <li ng-class="{true:'chosen',false:''}[type=='news']" ng-click="type='news'"><span>新闻管理</span></li>
+  </ul>
+  <!-- 设计师 -->
+  <div ng-if="type=='designer'">
+    <div class="admin-content col-lg-8" >
+        <div class="form-group">
+          <div class="col-lg-2">设计师名：</div>
+          <div class="col-lg-7">
+            <input class="form-control" type="text" ng-model="designer.name" placeholder="请输入设计师姓名">
+          </div>
+          <div class="col-lg-3">
+            <span class="help-block">***</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-2">公司职位：</div>
+          <div class="col-lg-7">
+            <input class="form-control" type="text" ng-model="designer.position" placeholder="请输入该设计师公司职位">
+          </div>
+          <div class="col-lg-3">
+            <span class="help-block">***</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-2">设计师职称：</div>
+          <div class="col-lg-7">
+            <input class="form-control" type="text" ng-model="designer.profession" placeholder="请输入该设计师职称">
+          </div>
+          <div class="col-lg-3">
+            <span class="help-block">***</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-2">设计理念：</div>
+          <div class="col-lg-7">
+            <input class="form-control" type="text" ng-model="designer.concenpt" placeholder="请输入该设计师设计理念">
+          </div>
+          <div class="col-lg-3">
+            <span class="help-block">***</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-2">从业时间：</div>
+          <div class="col-lg-7">
+            <input class="form-control" type="text" ng-model="designer.WorkingTime" placeholder="请输入该设计师设计理念">
+          </div>
+          <div class="col-lg-3">
+            <span class="help-block">***</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-2">公司名称：</div>
+          <div class="col-lg-7">
+            <input class="form-control" type="text" ng-model="designer.company" placeholder="请输入该设计师所在公司">
+          </div>
+          <div class="col-lg-3">
+            <span class="help-block">***</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-2">设计师头像：</div>
+          <div class="col-lg-7 upload-img"> 
+            <label for="file">选择上传头像</label>
+            <input type="file" id="file" value="">
+          </div>
+          <div class="col-lg-3">
+            <span class="help-block">***</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-7 col-lg-offset-2">
+            <button class="btn btn-success" ng-click="submitDesigner()">保存</button>
+          </div>
+        </div>
+    </div> 
+  </div>
+  <!-- 案例 -->
+  <div class="admin-content pull-left" ng-if="type=='case'">
+      我是案例
+  </div>
+  <!-- 新闻 -->
+  <div class="admin-content pull-left" ng-if="type=='news'">
+      我是新闻
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<page-header chosen-idx="2"></page-header>
+<!-- 设计团队banner图片 -->
+<img src="img/tuandui_banner.jpg" class="img-responsive">
+<div class="container"  style="padding-top: 25px;">
+    <ol class="breadcrumb">
+        <li>
+            <a href="#/">首页</a>
+        </li>
+        <li class="active">设计团队</li>
+    </ol>
+    <!-- 搜索框 -->
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-1"><input type="text" ng-model="designer.name" class="form-control" placeholder="请输入你想搜索的设计师"></div>
+        <button type="button" class="btn btn-primary" ng-click="search()">搜索</button>
+    </div>
+
+    <!-- 设计师列表 -->
+    <div class="row" style="padding:20px 0">
+        <div class="col-xs-12" ng-if="isShow">
+            <a href="javascript:void(0)" ng-click="withdraw()" class="btn btn-danger pull-right">撤回搜索</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-md-3 designer-item" ng-click="goDetail(item.desId)" ng-repeat="item in designers">
+            <img class="img-responsive" ng-src="{{item.headImg}}" alt="{{item.desName}}">
+            <p>{{item.desName}}</p>
+        </div>
+    </div>
+</div>

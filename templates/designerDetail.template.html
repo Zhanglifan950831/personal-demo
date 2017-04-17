@@ -1,0 +1,32 @@
+<page-header chosen-idx="2"></page-header>
+<!-- 设计团队banner图片 -->
+<img src="img/tuandui_banner.jpg" class="img-responsive">
+<div class="container"  style="padding-top: 25px;">
+    <ol class="breadcrumb">
+        <li>
+            <a href="#/">首页</a>
+        </li>
+        <li>
+            <a href="#/designer">设计团队</a>
+        </li>
+        <li class="active">详情</li>
+    </ol>
+    <!-- 设计师详情 -->
+    <div class="container">
+        <div class="pull-left">
+            <img class="img-responsive" ng-src="{{designer.headImg}}">
+        </div>
+        <div class="pull-left" style="padding: 2%;">
+            <p>设计师：{{designer.desName}}</p>
+            <p>公司名称：{{designer.company}}</p>
+            <p>职务：{{designer.position}}</p>
+            <p>职称：{{designer.profession}}</p>
+            <p>从业时间：{{designer.WorkingTime}}年</p>
+            <p>设计理念：{{designer.concept}}</p>
+        </div>
+        <div class="col-xs-12">
+            <h2 ng-if="awardList.length>0">获奖情况:</h2>
+            <p ng-repeat="item in awardList">{{item.aName}}</p>
+        </div>
+    </div>
+</div>
